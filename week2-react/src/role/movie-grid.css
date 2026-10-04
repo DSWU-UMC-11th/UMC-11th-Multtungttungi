@@ -1,0 +1,31 @@
+.movie-grid {
+
+    width: 1280px;
+    height: 678px;
+}
+
+.movie-grid-title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.movie-grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.movie-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+
+    width: 241.6px;
+    height: 14px;
+
+
+}

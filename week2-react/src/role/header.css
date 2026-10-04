@@ -1,0 +1,119 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 80px;
+    background: #FFFFFF;
+    border-bottom: 1px solid #E3E6EB;
+}
+
+.brand-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 42px;
+}
+
+.brand {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.logo-icon {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 0px;
+    width: 32px;
+    height: 32px;
+    border: 2px solid #17191E;
+    border-radius: 8px;
+}
+
+
+.logo-text {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #17191E;
+
+}
+
+
+.nav-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 30px;
+}
+
+.nav-link {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #606774;
+}
+
+.top-actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 10px;
+
+}
+
+.search-btn {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1px 6px;
+    background: #FFFFFF;
+    border: 1px solid #E3E6EB;
+    border-radius: 8px;
+    height: 32px;
+    width: 32px;
+}
+
+.login-btn {
+    height: 32px;
+    width: 80px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    background: #2563EB;
+    border: 1px solid #FFFFFF;
+    border-radius: 8px;
+    justify-content: center;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    background: #2563EB;
+
+}
