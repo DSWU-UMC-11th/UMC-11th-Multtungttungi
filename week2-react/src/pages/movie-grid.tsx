@@ -1,4 +1,4 @@
-import MovieCard from "./movie-card";
+import MovieCard from "../components/movies/movie-card";
 import { type Movie } from "../types/movie";
 import "./movie-grid.css";
 
