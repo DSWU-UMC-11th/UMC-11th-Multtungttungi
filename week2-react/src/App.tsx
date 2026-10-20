@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { type Movie } from "./types/movie";
-import Header from "./role/header";
-import MovieGrid from "./role/movie-grid";
-import Pagination from "./role/pagination";
-import Footer from "./role/footer";
+import Header from "./components/layout/header";
+import MovieGrid from "./components/movies/movie-grid";
+import Pagination from "./pages/pagination";
+import Footer from "./components/layout/footer";
 
 
 const initialMovies: Movie[] = [
