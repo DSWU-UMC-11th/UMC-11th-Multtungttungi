@@ -3,10 +3,9 @@ import { type Movie } from "../../types/movie";
 
 interface MovieGridProps {
     movies: Movie[];
-    onToggleBookmark: (id: number) => void;
 }
 
-export default function MovieGrid({ movies, onToggleBookmark }: MovieGridProps) {
+export default function MovieGrid({ movies }: MovieGridProps) {
     return (
         <section className="w-full">
             <div className="flex justify-between items-center mb-5">
@@ -15,7 +14,7 @@ export default function MovieGrid({ movies, onToggleBookmark }: MovieGridProps) 
 
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
                 {movies.map((movie) => (
-                    <MovieCard key={movie.id} movie={movie} onToggleBookmark={onToggleBookmark} />
+                    <MovieCard key={movie.id} movie={movie} />
                 ))}
             </div>
         </section>
