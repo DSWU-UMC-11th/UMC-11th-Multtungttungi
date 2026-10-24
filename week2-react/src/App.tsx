@@ -140,19 +140,11 @@ const initialMovies: Movie[] = [
 ];
 
 export default function App() {
-  const [movies, setMovies] = useState<Movie[]>(initialMovies);
+  const [movies] = useState<Movie[]>(initialMovies);
   const [currentPage, setCurrentPage] = useState(1);
   const totalpages = Math.ceil(movies.length / 5);
 
-  function handleToggleBookmark(movieId: number) {
-    setMovies((currentMovies) =>
-      currentMovies.map((movie) =>
-        movie.id === movieId
-          ? { ...movie, isBookmarked: !movie.isBookmarked }
-          : movie,
-      ),
-    );
-  }
+
 
   return (
     <div>
@@ -160,7 +152,7 @@ export default function App() {
       <main className="flex-grow">
         <MovieGrid
           movies={movies}
-          onToggleBookmark={handleToggleBookmark} />
+        />
         <Pagination
           currentPage={currentPage}
           totalPages={totalpages}
