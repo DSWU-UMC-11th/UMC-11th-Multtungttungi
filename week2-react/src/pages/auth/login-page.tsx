@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useLoginMutation } from "../../hooks/use-login-mutation";
 
 export function LoginPage() {
+    const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const [form, setForm] = useState({
         email: "",
         password: "",
@@ -10,9 +12,17 @@ export function LoginPage() {
         setForm((prev) => ({ ...prev, [key]: value }));
     };
 
-    const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        alert("로그인 API 연동 준비 완료!");
+    const loginMutation = useLoginMutation();
+    const canSubmit = EMAIL_REGEX.test(form.email.trim()) && form.password.length > 0;
+
+    const handleSubmit = (event: React.SubmitEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        if (!canSubmit || loginMutation.isPending) return;
+
+        loginMutation.mutate({
+            email: form.email.trim(),
+            password: form.password,
+        });
     };
 
     return (
@@ -58,10 +68,9 @@ export function LoginPage() {
 
                     <button
                         type="submit"
-                        disabled={!form.email || !form.password}
-                        className="mt-2 w-full h-[48px] bg-[#2563EB] text-white font-extrabold text-[14px] rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-blue-700 transition-colors"
-                    >
-                        로그인
+                        disabled={!canSubmit || loginMutation.isPending}
+                        className="mt-2 w-full h-[48px] bg-[#2563EB] text-white font-extrabold text-[14px] rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-blue-700 transition-colors">
+                        {loginMutation.isPending ? "로그인 중" : "로그인"}
                     </button>
                 </form>
 
