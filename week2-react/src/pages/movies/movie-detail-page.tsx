@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { BookmarkButton } from "../../components/bookmark-button";
 import { getMovieDetail } from "../../api/movies/get-movie-detail";
 import { getMovieDetailErrorMessage } from "../../utils/movies/get-movie-detail-error-message";
+import { MovieRatingSection } from "../../components/movie-rating-section";
 
 export function MovieDetailPage() {
     const { movieId: movieIdParam } = useParams({ from: "/movies/$movieId" });
@@ -85,7 +86,12 @@ export function MovieDetailPage() {
                                         className="w-full rounded-xl shadow-lg border border-gray-700"
                                     />
                                     <div className="mt-4">
-                                        <BookmarkButton movieId={movie.id} />
+                                        <BookmarkButton
+                                            movieId={movie.id}
+                                            title={movie.title}
+                                            posterPath={movie.poster_path}
+                                            releaseDate={movie.release_date}
+                                        />
                                     </div>
                                 </div>
 
@@ -99,6 +105,7 @@ export function MovieDetailPage() {
                                     <p className="text-gray-400 leading-relaxed">
                                         {movie.overview || "등록된 줄거리가 없습니다."}
                                     </p>
+                                    <MovieRatingSection movieId={movie.id} />
                                 </div>
                             </div>
                         </div>
